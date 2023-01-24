@@ -1,0 +1,191 @@
+/* polices */
+/* josefin-sans-300 - latin */
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local(''),
+         url('../fonts/josefin-sans-v25-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/josefin-sans-v25-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* josefin-sans-regular - latin */
+  @font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/josefin-sans-v25-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/josefin-sans-v25-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+/* alata-regular - latin */
+@font-face {
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/alata-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/alata-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+
+
+
+:root {
+/* variables déclarées */
+}
+
+body {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    background-color: grey;
+
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100vh;
+}
+
+
+/* Container à la BootStrap */
+.container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+
+
+/* composants */
+.menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #ffffff; */
+
+}
+
+.menu-btn__burger {
+    width: 2.4rem;
+    height: 0.2rem;
+    line-height: 0.5rem;
+    background-color: #ffffff;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before, 
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 2.4rem;
+    height: 0.2rem;
+    background-color: #ffffff;
+    transition: all .5s ease-in-out;
+
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-8px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(8px);
+
+}
+
+/* ANIMATION*/
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);     
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+/* Menu content */
+
+.header-container {
+    position: relative;
+    display: flex;
+    min-width: 37.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-header {
+    display: flex;
+    width: 32.7rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    margin-top: 3.8rem;
+}
+.logo {
+    display: block;
+    /* width: 14.4rem; */
+    /* height: 2.4rem; */
+}
+
+.logo-link {
+    display: inline-block;
+    width: 14.4rem;
+    height: 2.4rem;
+    background-image: url(../img/loopstudios.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.menu-mobil {
+    content:'';
+    width: 375px;
+    height: 66.7rem;
+    position: absolute;
+    top:0;
+    display: flex;
+    align-items: center;
+
+    translate: 50rem;
+    background-color: black;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    z-index: -1;
+}
+
+/* ANIMATION*/
+.menu-mobil.active {
+    transform: translateX(-50rem);
+    opacity: 1;
+    z-index: -1;
+}
+
+
+.menu-list {
+    display: flex;
+    height: 22.1rem;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 2.4rem;
+}
+.burger__item {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+
+}
